@@ -1,0 +1,26 @@
+#include "config.h"
+
+#if SHOWN_PROBLEM <= {__pytemplate__problem_id}
+
+#include <assert.h>
+
+#include <algorithm>
+
+#include <fmt/format.h>
+
+#include "numbers.h"
+
+auto problem{__pytemplate__problem_id}_result() {{
+	return "NOT_IMPLEMENTED";
+}}
+
+void problem{__pytemplate__problem_id}() {{
+	fmt::print("DO NOT CLOSE THIS CONSOLE WINDOW ACCIDENTALLY!\n\n");
+	fmt::print("Solving problem {__pytemplate__problem_id}...\n\n");
+
+	auto res = problem{__pytemplate__problem_id}_result();
+
+	fmt::print("The result is:\n{{}}\n\n", res);
+}}
+
+#endif
