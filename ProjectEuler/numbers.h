@@ -86,13 +86,11 @@ bool is_prime(NUMBER_T number) {
 
 template <class NUMBER_T>
 void prime_factors(NUMBER_T number, std::vector<NUMBER_T>& factors) {
-	for (NUMBER_T i = 2; i < number; ++i) {
+	NUMBER_T sentinel_n = integer_sqrt(number) + 1;
+	for (NUMBER_T i = 2; i < sentinel_n; ++i) {
 		if (is_divisible_by(number, i)) {
-			NUMBER_T left_factor = i;
-			NUMBER_T right_factor = number / i;
-
-			prime_factors(left_factor, factors);
-			prime_factors(right_factor, factors);
+			factors.push_back(i);
+			prime_factors(number / i, factors);
 			return;
 		}
 	}

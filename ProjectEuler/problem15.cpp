@@ -13,18 +13,18 @@
 #include "bigi.h"
 #include "memoize.h"
 
-u64 rec_memo_impl(RecMemoMapT<u64, u32, u32, u32>& memo_map, u32 n, u32 i, u32 j) {
+u64 rec_memo_impl(ManyArgsRecMemoMapT<u64, u32, u32, u32>& memo_map, u32 n, u32 i, u32 j) {
 	if (i > n || j > n) return 0;
 
 	if (i == n && j == n) return 1;
 
 	return
-		fn_memo_wrap(memo_map, rec_memo_impl, n, i + 1, j) +
-		fn_memo_wrap(memo_map, rec_memo_impl, n, i, j + 1);
+		fn_memo_wrap_rec(memo_map, rec_memo_impl, n, i + 1, j) +
+		fn_memo_wrap_rec(memo_map, rec_memo_impl, n, i, j + 1);
 }
 
 u64 rec_memo(u32 n) {
-	RecMemoMapT<u64, u32, u32, u32> memo_map;
+	ManyArgsRecMemoMapT<u64, u32, u32, u32> memo_map;
 
 	return rec_memo_impl(memo_map, n, 0, 0);
 }
