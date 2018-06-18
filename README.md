@@ -4,9 +4,9 @@ Solving problems from [Project Euler](https://projecteuler.net/), playing with m
 # Building
 *Brace yourself !*
 
-No descent build system is used right now, that's why the Visual Studio 2015 project files are included as is.
+No decent build system is used right now, that's why the Visual Studio 2015 project files are included as is.
 
-It is then needed to manually setup the various include and library paths in the project build options.
+It is then needed to manually setup the various include and library paths in the project build options. (Or just use *vcpkg*!)
 
 # Dependencies
 
