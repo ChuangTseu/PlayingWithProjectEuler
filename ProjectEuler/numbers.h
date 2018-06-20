@@ -106,7 +106,7 @@ NUMBER_T opt_divisor_count(NUMBER_T number, std::vector<NUMBER_T>& reused_optimi
 	factors.clear();
 	prime_factors(number, factors);
 
-	// factors is guarenteed to have at least one element, starting the check on the second element (if any)
+	// factors is guaranteed to have at least one element, starting the check on the second element (if any)
 	u32 idx = 1;
 	for (; idx < factors.size() && factors[idx] == factors[0]; ++idx);
 

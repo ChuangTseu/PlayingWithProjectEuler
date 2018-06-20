@@ -51,7 +51,7 @@ u32 divisors_sum_withitself(u32 n) {
 		u32 acc = 1;
 		mults_comb[mults_comb_idx].push_back(acc);
 
-		auto range = std::equal_range(ps.cbegin(), ps.cend(), ps[i]);
+		RangePairT range = std::equal_range(ps.cbegin(), ps.cend(), ps[i]);
 
 		size_t s = std::distance(range.first, range.second);
 
